@@ -42,3 +42,8 @@ with open("places.csv") as file:
         places.append(parts)
 
 print(f"{len(places)} places loaded from places.csv")
+
+# display places list
+def display_places_basic():
+    for place in places:
+        print(place)
