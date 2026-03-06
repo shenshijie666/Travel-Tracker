@@ -61,3 +61,17 @@ def display_places():
         marker = "* " if visited == "n" else "  "
 
         print(f"{marker}{count}. {name:10} in {country:15} priority {priority}")
+
+# unvisited places counter
+def count_unvisited():
+    count = 0
+    for place in places:
+        if place[3] == "n":
+            count += 1
+    return count
+
+
+def show_summary():
+    total = len(places)
+    unvisited = count_unvisited()
+    print(f"{total} places tracked. You still want to visit {unvisited} places.")
