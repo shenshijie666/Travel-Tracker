@@ -10,6 +10,7 @@ A - Add a new place
 M - Mark a place as visited
 Q - Quit
 """
+import random
 
 print("Travel Tracker 1.0 - by shenshijie666")
 
@@ -30,3 +31,14 @@ while choice != "Q":
         print("Have a nice day :)")
     else:
         print("Invalid menu choice")
+
+# load places from csv
+places = []
+
+with open("places.csv") as file:
+    for line in file:
+        parts = line.strip().split(",")
+        parts[2] = int(parts[2])      # convert priority
+        places.append(parts)
+
+print(f"{len(places)} places loaded from places.csv")
