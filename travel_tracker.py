@@ -47,3 +47,17 @@ print(f"{len(places)} places loaded from places.csv")
 def display_places_basic():
     for place in places:
         print(place)
+
+# improved displayed places formatting
+def display_places():
+    count = 0
+    for place in places:
+        count += 1
+        name = place[0]
+        country = place[1]
+        priority = place[2]
+        visited = place[3]
+
+        marker = "* " if visited == "n" else "  "
+
+        print(f"{marker}{count}. {name:10} in {country:15} priority {priority}")
