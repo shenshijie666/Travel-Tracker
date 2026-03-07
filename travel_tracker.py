@@ -15,22 +15,30 @@ import random
 print("Travel Tracker 1.0 - by shenshijie666")
 
 choice = ""
+
 while choice != "Q":
-    print(MENU)
+    display_menu()
     choice = input(">>> ").upper()
 
     if choice == "D":
-        print("Display all places")
+        display_places()
+        show_summary()
+
     elif choice == "R":
-        print("Recommend a random place")
+        recommend_place()
+
     elif choice == "A":
-        print("Add a new place")
+        add_place()
+
     elif choice == "M":
-        print("Mark a place as visited")
+        mark_visited()
+
     elif choice == "Q":
-        print("Have a nice day :)")
+        save_places()
+        print("Goodbye!")
+
     else:
-        print("Invalid menu choice")
+        print("Invalid option")
 
 # load places from csv
 places = []
