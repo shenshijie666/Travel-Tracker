@@ -86,3 +86,14 @@ def recommend_place():
     else:
         place = random.choice(unvisited)
         print(f"Why not visit {place[0]} in {place[1]}?")
+
+# create a new place entry
+def add_place():
+    name = input("Name: ")
+    country = input("Country: ")
+    priority = int(input("Priority: "))
+
+    places.append([name, country, priority, "n"])
+    print(f"{name} in {country} (priority {priority}) added.")
+
+
