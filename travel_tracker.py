@@ -75,3 +75,14 @@ def show_summary():
     total = len(places)
     unvisited = count_unvisited()
     print(f"{total} places tracked. You still want to visit {unvisited} places.")
+
+# recommend random unvisited place
+
+def recommend_place():
+    unvisited = [place for place in places if place[3] == "n"]
+
+    if not unvisited:
+        print("No places left to visit!")
+    else:
+        place = random.choice(unvisited)
+        print(f"Why not visit {place[0]} in {place[1]}?")
