@@ -1,6 +1,7 @@
 """
 CP1404 Assignment 1 - Travel Tracker
-Author: shenshijie666
+Author: Shen Shijie
+JCU ID: 14568553
 """
 
 MENU = """Menu:
@@ -52,11 +53,6 @@ with open("places.csv") as file:
 print(f"{len(places)} places loaded from places.csv")
 
 # display places list
-def display_places_basic():
-    for place in places:
-        print(place)
-
-# improved displayed places formatting
 def display_places():
     count = 0
     for place in places:
