@@ -88,10 +88,28 @@ def recommend_place():
         print(f"Why not visit {place[0]} in {place[1]}?")
 
 # create a new place entry
+
 def add_place():
     name = input("Name: ")
+    while name == "":
+        print("Input cannot be blank")
+        name = input("Name: ")
+
     country = input("Country: ")
-    priority = int(input("Priority: "))
+    while country == "":
+        print("Input cannot be blank")
+        country = input("Country: ")
+
+    valid = False
+    while not valid:
+        try:
+            priority = int(input("Priority: "))
+            if priority > 0:
+                valid = True
+            else:
+                print("Priority must be > 0")
+        except ValueError:
+            print("Invalid input")
 
     places.append([name, country, priority, "n"])
     print(f"{name} in {country} (priority {priority}) added.")
