@@ -141,5 +141,16 @@ def mark_visited():
     except ValueError:
         print("Invalid input")
 
+# save places to CSV when quitting
+def save_places():
+    with open("places.csv", "w") as file:
+        for place in places:
+            line = ",".join([place[0], place[1], str(place[2]), place[3]])
+            file.write(line + "\n")
+
+    print(f"{len(places)} places saved to places.csv")
+
+
+
 
 
