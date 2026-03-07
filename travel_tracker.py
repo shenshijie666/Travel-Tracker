@@ -114,4 +114,32 @@ def add_place():
     places.append([name, country, priority, "n"])
     print(f"{name} in {country} (priority {priority}) added.")
 
+# mark as visited
+
+def mark_visited():
+    display_places()
+
+    try:
+        choice = int(input("Enter place number: "))
+
+        if choice <= 0:
+            print("Number must be > 0")
+            return
+
+        index = choice - 1
+
+        if index >= len(places):
+            print("Invalid place number")
+            return
+
+        if places[index][3] == "v":
+            print("You have already visited this place")
+        else:
+            places[index][3] = "v"
+            print(f"{places[index][0]} in {places[index][1]} visited!")
+
+    except ValueError:
+        print("Invalid input")
+
+
 
